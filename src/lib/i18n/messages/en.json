@@ -1,0 +1,97 @@
+{
+  "nav": {
+    "map": "Map",
+    "peaks": "Peaks",
+    "profile": "Profile",
+    "login": "Login",
+    "logout": "Logout"
+  },
+  "map": {
+    "title": "HPO Sobilaznica",
+    "subtitle": "Croatian Mountaineering Circuit",
+    "filterTitle": "Filter by person",
+    "showUnvisited": "Show unvisited",
+    "allUnvisited": "No one visited",
+    "loading": "Loading map...",
+    "peaksCount": "{count} of 153 peaks",
+    "visited": "Visited",
+    "unvisited": "Unvisited"
+  },
+  "peak": {
+    "elevation": "Elevation",
+    "section": "Region",
+    "difficulty": "Difficulty",
+    "easy": "Easy",
+    "moderate": "Moderate",
+    "demanding": "Demanding",
+    "visitedBy": "Visited by",
+    "noVisits": "No one has visited this peak yet.",
+    "markVisited": "Mark as visited",
+    "editVisit": "Edit visit",
+    "hpoNumber": "HPO no.",
+    "photos": "Photos",
+    "note": "Note"
+  },
+  "visitForm": {
+    "title": "Mark as visited",
+    "dateLabel": "Visit date",
+    "noteLabel": "Note (optional)",
+    "notePlaceholder": "How was it? Any special memories...",
+    "photosLabel": "Photos (optional)",
+    "photosHint": "Add up to 5 photos from the summit",
+    "submit": "Save visit",
+    "submitting": "Saving...",
+    "cancel": "Cancel",
+    "success": "Visit saved successfully!",
+    "error": "Error saving. Please try again."
+  },
+  "login": {
+    "title": "Login",
+    "subtitle": "Enter your email and we'll send you a login link.",
+    "emailLabel": "Email address",
+    "emailPlaceholder": "your@email.com",
+    "submit": "Send login link",
+    "submitting": "Sending...",
+    "successTitle": "Check your email!",
+    "successText": "We sent a login link to {email}. Click the link and you'll be signed in.",
+    "error": "Error sending. Check your email and try again."
+  },
+  "profile": {
+    "title": "My profile",
+    "displayName": "Display name",
+    "displayNamePlaceholder": "What's your name?",
+    "save": "Save",
+    "saving": "Saving...",
+    "saved": "Saved!",
+    "myPeaks": "My peaks",
+    "peaksVisited": "{count} peaks visited",
+    "progress": "Progress",
+    "of153": "of 153 HPO peaks"
+  },
+  "leaderboard": {
+    "title": "Leaderboard",
+    "rank": "#",
+    "name": "Name",
+    "peaks": "Peaks",
+    "percentage": "%"
+  },
+  "peaks": {
+    "title": "All peaks",
+    "search": "Search peaks...",
+    "filterSection": "Filter by region",
+    "allSections": "All regions",
+    "sortBy": "Sort by",
+    "sortHpo": "HPO number",
+    "sortElevation": "Elevation",
+    "sortName": "Name",
+    "noResults": "No results found."
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "notFound": "Page not found",
+    "backToMap": "Back to map",
+    "meters": "m",
+    "unknown": "Unknown"
+  }
+}

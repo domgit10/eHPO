@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# HPO Sobilaznica
 
-## Getting Started
+Web app za praćenje posjeta vrhovima Hrvatske planinarske obilaznice (HPO) unutar grupe prijatelja.
 
-First, run the development server:
+> Track which of the 153 HPO peaks your friend group has visited, plan next trips, and share photos from the summits.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Interactive map** — all 153 HPO peaks on a map of Croatia
+- **Per-person filters** — see which peaks each friend has visited
+- **Unvisited highlight** — instantly see peaks no one has climbed yet
+- **Visit log** — mark peaks as visited with date, note, and photos
+- **Progress leaderboard** — who's closest to the full 153?
+- **Bilingual** — Croatian and English UI
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Tech Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Next.js 16** (App Router, TypeScript)
+- **Supabase** — PostgreSQL database, magic-link auth, photo storage
+- **Leaflet.js** — interactive map with OpenStreetMap tiles
+- **Tailwind CSS v4** — styling
+- **Vercel** — hosting (auto-deploy from GitHub)
 
-## Learn More
+## Local Development
 
-To learn more about Next.js, take a look at the following resources:
+### Prerequisites
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Node.js 18+
+- A free [Supabase](https://supabase.com) project
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Setup
 
-## Deploy on Vercel
+1. Clone the repo:
+   ```bash
+   git clone https://github.com/YOUR_USERNAME/hpo-sobilaznica.git
+   cd hpo-sobilaznica
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+3. Create `.env.local` with your Supabase credentials:
+   ```
+   NEXT_PUBLIC_SUPABASE_URL=https://xxxxx.supabase.co
+   NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
+   SUPABASE_SERVICE_ROLE_KEY=your-service-role-key
+   ```
+
+4. Run the database migrations in Supabase SQL Editor:
+   - Copy contents of `supabase/migrations/001_initial_schema.sql`
+   - Paste and run in Supabase -> SQL Editor
+
+5. Seed the peaks data:
+   ```bash
+   npm run seed
+   ```
+
+6. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+7. Open [http://localhost:3000](http://localhost:3000)
+
+## Deployment to Vercel
+
+1. Push your code to GitHub
+2. Go to [vercel.com](https://vercel.com) and import your GitHub repo
+3. Add environment variables from `.env.local` in Vercel project settings
+4. Deploy — Vercel auto-deploys on every push to `main`
+
+## HPO Data
+
+The 153 peak coordinates in `supabase/seed/peaks.json` are compiled from public sources. Coordinates should be verified against the official HPS map at hps.hr/karta before relying on them for navigation.
+
+## Contributing
+
+This is a private project for a friend group. To add yourself: register via the app using your email — no invite needed.

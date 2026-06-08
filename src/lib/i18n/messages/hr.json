@@ -1,0 +1,97 @@
+{
+  "nav": {
+    "map": "Karta",
+    "peaks": "Vrhovi",
+    "profile": "Profil",
+    "login": "Prijava",
+    "logout": "Odjava"
+  },
+  "map": {
+    "title": "HPO Sobilaznica",
+    "subtitle": "Hrvatska planinarska obilaznica",
+    "filterTitle": "Filtriraj po osobi",
+    "showUnvisited": "Prikaži neposjećene",
+    "allUnvisited": "Nitko nije posjetio",
+    "loading": "Učitavanje karte...",
+    "peaksCount": "{count} od 153 vrhova",
+    "visited": "Posjetio/la",
+    "unvisited": "Neposjećen"
+  },
+  "peak": {
+    "elevation": "Nadmorska visina",
+    "section": "Područje",
+    "difficulty": "Težina",
+    "easy": "Lako",
+    "moderate": "Srednje",
+    "demanding": "Zahtjevno",
+    "visitedBy": "Posjetili",
+    "noVisits": "Nitko još nije posjetio ovaj vrh.",
+    "markVisited": "Označi kao posjećen",
+    "editVisit": "Uredi posjet",
+    "hpoNumber": "HPO br.",
+    "photos": "Fotografije",
+    "note": "Bilješka"
+  },
+  "visitForm": {
+    "title": "Označi kao posjećen",
+    "dateLabel": "Datum posjete",
+    "noteLabel": "Bilješka (nije obavezno)",
+    "notePlaceholder": "Kako je bilo? Posebni dojmovi...",
+    "photosLabel": "Fotografije (nije obavezno)",
+    "photosHint": "Dodaj do 5 fotografija s vrha",
+    "submit": "Spremi posjet",
+    "submitting": "Spremanje...",
+    "cancel": "Odustani",
+    "success": "Posjet uspješno zabilježen!",
+    "error": "Greška pri spremanju. Pokušaj ponovo."
+  },
+  "login": {
+    "title": "Prijava",
+    "subtitle": "Unesite e-mail adresu i dobit ćete link za prijavu.",
+    "emailLabel": "E-mail adresa",
+    "emailPlaceholder": "tvoj@email.com",
+    "submit": "Pošalji link za prijavu",
+    "submitting": "Slanje...",
+    "successTitle": "Provjeri e-mail!",
+    "successText": "Poslali smo ti link za prijavu na {email}. Klikni na link i bit ćeš prijavljen/a.",
+    "error": "Greška pri slanju. Provjeri e-mail i pokušaj ponovo."
+  },
+  "profile": {
+    "title": "Moj profil",
+    "displayName": "Ime za prikaz",
+    "displayNamePlaceholder": "Kako te zovu?",
+    "save": "Spremi",
+    "saving": "Spremanje...",
+    "saved": "Spremljeno!",
+    "myPeaks": "Moji vrhovi",
+    "peaksVisited": "{count} posjećenih vrhova",
+    "progress": "Napredak",
+    "of153": "od 153 HPO vrhova"
+  },
+  "leaderboard": {
+    "title": "Ljestvica",
+    "rank": "#",
+    "name": "Ime",
+    "peaks": "Vrhovi",
+    "percentage": "%"
+  },
+  "peaks": {
+    "title": "Svi vrhovi",
+    "search": "Pretraži vrhove...",
+    "filterSection": "Filtriraj po području",
+    "allSections": "Sva područja",
+    "sortBy": "Sortiraj po",
+    "sortHpo": "HPO broj",
+    "sortElevation": "Visina",
+    "sortName": "Naziv",
+    "noResults": "Nema rezultata."
+  },
+  "common": {
+    "loading": "Učitavanje...",
+    "error": "Greška",
+    "notFound": "Stranica nije pronađena",
+    "backToMap": "Povratak na kartu",
+    "meters": "m",
+    "unknown": "Nepoznato"
+  }
+}
