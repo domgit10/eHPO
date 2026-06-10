@@ -8,8 +8,8 @@ import './globals.css';
 const geist = Geist({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'HPO Sobilaznica',
-  description: 'Praćenje posjeta Hrvatskoj planinارskoj obilaznici',
+  title: 'eHPO',
+  description: 'eHPO - digitalna hrvatska planinarska obilaznica',
 };
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {

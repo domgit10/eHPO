@@ -8,8 +8,8 @@
     "logout": "Odjava"
   },
   "map": {
-    "title": "HPO Sobilaznica",
-    "subtitle": "Hrvatska planinarska obilaznica",
+    "title": "eHPO",
+    "subtitle": "digitalna hrvatska planinarska obilaznica",
     "filterTitle": "Filtriraj po osobi",
     "showUnvisited": "Prikaži neposjećene",
     "allUnvisited": "Nitko nije posjetio",
