@@ -56,19 +56,19 @@ export function PeaksClient({ peaks, visitorsByPeak, myVisitedIds }: PeaksClient
           placeholder={t('search')}
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          className="flex-1 px-3 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+          className="flex-1 px-3 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-green-500 text-gray-900"
         />
         <select
           value={section}
           onChange={(e) => setSection(e.target.value)}
-          className="px-3 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+          className="px-3 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-green-500 text-gray-900"
         >
           {SECTIONS.map((s) => <option key={s}>{s}</option>)}
         </select>
         <select
           value={sort}
           onChange={(e) => setSort(e.target.value as 'hpo' | 'elevation' | 'name')}
-          className="px-3 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+          className="px-3 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-green-500 text-gray-900"
         >
           <option value="hpo">{t('sortHpo')}</option>
           <option value="elevation">{t('sortElevation')}</option>
@@ -79,7 +79,7 @@ export function PeaksClient({ peaks, visitorsByPeak, myVisitedIds }: PeaksClient
       {/* List */}
       <div className="space-y-1">
         {filtered.length === 0 && (
-          <p className="text-center text-gray-400 py-8">{t('noResults')}</p>
+          <p className="text-center text-gray-600 py-8">{t('noResults')}</p>
         )}
         {filtered.map((peak) => {
           const visitors = visitorsByPeak.get(peak.id) ?? [];
@@ -91,7 +91,7 @@ export function PeaksClient({ peaks, visitorsByPeak, myVisitedIds }: PeaksClient
               href={`/peaks/${peak.id}`}
               className="flex items-center gap-4 bg-white rounded-xl border border-gray-100 px-4 py-3 hover:border-green-200 hover:shadow-sm transition-all group"
             >
-              <span className="text-xs font-mono text-gray-300 w-8 flex-shrink-0">
+              <span className="text-xs font-mono text-gray-500 w-8 flex-shrink-0">
                 #{peak.hpo_number}
               </span>
 
@@ -107,18 +107,18 @@ export function PeaksClient({ peaks, visitorsByPeak, myVisitedIds }: PeaksClient
                   )}
                 </div>
                 {peak.section_hr && (
-                  <span className="text-xs text-gray-400">{peak.section_hr}</span>
+                  <span className="text-xs text-gray-600">{peak.section_hr}</span>
                 )}
               </div>
 
               <div className="flex items-center gap-4 flex-shrink-0">
                 {peak.difficulty && (
-                  <span className={`text-xs ${difficultyColors[peak.difficulty] ?? 'text-gray-400'}`}>
+                  <span className={`text-xs ${difficultyColors[peak.difficulty] ?? 'text-gray-600'}`}>
                     {difficultyLabels[peak.difficulty] ?? peak.difficulty}
                   </span>
                 )}
                 {peak.elevation_m && (
-                  <span className="text-xs text-gray-400 font-mono w-14 text-right">
+                  <span className="text-xs text-gray-600 font-mono w-14 text-right">
                     {peak.elevation_m}m
                   </span>
                 )}
@@ -128,7 +128,7 @@ export function PeaksClient({ peaks, visitorsByPeak, myVisitedIds }: PeaksClient
                     {visitors.length > 2 && ` +${visitors.length - 2}`}
                   </div>
                 ) : (
-                  <span className="text-xs text-gray-200 w-20 text-right">—</span>
+                  <span className="text-xs text-gray-500 w-20 text-right">—</span>
                 )}
               </div>
             </Link>

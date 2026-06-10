@@ -2,6 +2,7 @@
   "nav": {
     "map": "Map",
     "peaks": "Peaks",
+    "leaderboard": "Leaderboard",
     "profile": "Profile",
     "login": "Login",
     "logout": "Logout"
@@ -35,6 +36,21 @@
   "visitForm": {
     "title": "Mark as visited",
     "dateLabel": "Visit date",
+    "unknownDate": "I don't remember the date",
+    "companionsLabel": "Who came with you? (optional)",
+    "companionsPlaceholder": "Marko, Ana, Petra...",
+    "startPointLabel": "Starting point / route (optional)",
+    "startPointPlaceholder": "e.g. Bijela Voda – Restaurant",
+    "weatherLabel": "Weather conditions (optional)",
+    "weatherSunny": "Sunny ☀️",
+    "weatherCloudy": "Cloudy ⛅",
+    "weatherFoggy": "Foggy 🌫️",
+    "weatherRainy": "Rainy 🌧️",
+    "weatherSnowy": "Snowy ❄️",
+    "weatherSelect": "Select conditions...",
+    "durationLabel": "Hike duration (optional)",
+    "durationHours": "Hours",
+    "durationMinutes": "Minutes",
     "noteLabel": "Note (optional)",
     "notePlaceholder": "How was it? Any special memories...",
     "photosLabel": "Photos (optional)",
@@ -47,19 +63,18 @@
   },
   "login": {
     "title": "Login",
-    "subtitle": "Enter your email and we'll send you a login link.",
-    "emailLabel": "Email address",
-    "emailPlaceholder": "your@email.com",
-    "submit": "Send login link",
-    "submitting": "Sending...",
-    "successTitle": "Check your email!",
-    "successText": "We sent a login link to {email}. Click the link and you'll be signed in.",
-    "error": "Error sending. Check your email and try again."
+    "subtitle": "Sign in with your Google account. Fast, no password.",
+    "googleButton": "Sign in with Google",
+    "signingIn": "Signing in...",
+    "error": "Sign-in error. Please try again."
   },
   "profile": {
     "title": "My profile",
+    "emailLabel": "Email address",
     "displayName": "Display name",
     "displayNamePlaceholder": "What's your name?",
+    "hikingClub": "Hiking club (optional)",
+    "hikingClubPlaceholder": "e.g. PD Željezničar",
     "save": "Save",
     "saving": "Saving...",
     "saved": "Saved!",
@@ -69,11 +84,13 @@
     "of153": "of 153 HPO peaks"
   },
   "leaderboard": {
-    "title": "Leaderboard",
+    "title": "Mountaineer Leaderboard",
+    "subtitle": "Who has visited the most HPO peaks?",
     "rank": "#",
-    "name": "Name",
+    "name": "Mountaineer",
     "peaks": "Peaks",
-    "percentage": "%"
+    "percentage": "%",
+    "empty": "No visits yet. Be the first!"
   },
   "peaks": {
     "title": "All peaks",

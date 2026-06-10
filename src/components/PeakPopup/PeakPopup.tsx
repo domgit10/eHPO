@@ -54,7 +54,7 @@ export function PeakPopup({
       <div className="p-4 border-b border-gray-100 flex items-start justify-between">
         <div>
           <div className="flex items-center gap-2 mb-1">
-            <span className="text-xs text-gray-400 font-mono">HPO #{peak.hpo_number}</span>
+            <span className="text-xs text-gray-600 font-mono">HPO #{peak.hpo_number}</span>
             {peak.difficulty && (
               <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${difficultyColors[peak.difficulty]}`}>
                 {difficultyLabels[peak.difficulty]}
@@ -66,10 +66,10 @@ export function PeakPopup({
             <p className="text-sm text-gray-500">{peak.elevation_m} {tCommon('meters')}</p>
           )}
           {peak.section_hr && (
-            <p className="text-xs text-gray-400 mt-0.5">{peak.section_hr}</p>
+            <p className="text-xs text-gray-600 mt-0.5">{peak.section_hr}</p>
           )}
         </div>
-        <button onClick={onClose} className="text-gray-400 hover:text-gray-700 text-xl leading-none">
+        <button onClick={onClose} className="text-gray-500 hover:text-gray-800 text-xl leading-none">
           ×
         </button>
       </div>
@@ -77,7 +77,7 @@ export function PeakPopup({
       {/* Visits */}
       <div className="flex-1 overflow-y-auto p-4 space-y-4">
         {visits.length === 0 ? (
-          <p className="text-sm text-gray-400 text-center py-4">{t('noVisits')}</p>
+          <p className="text-sm text-gray-600 text-center py-4">{t('noVisits')}</p>
         ) : (
           <>
             <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider">{t('visitedBy')}</p>
@@ -95,8 +95,8 @@ export function PeakPopup({
                     <span className="font-medium text-sm text-gray-800">
                       {profile?.display_name ?? tCommon('unknown')}
                     </span>
-                    <span className="text-xs text-gray-400 ml-auto">
-                      {new Date(visit.visited_at).toLocaleDateString('hr-HR')}
+                    <span className="text-xs text-gray-600 ml-auto">
+                      {visit.visited_at ? new Date(visit.visited_at).toLocaleDateString('hr-HR') : '—'}
                     </span>
                   </div>
 

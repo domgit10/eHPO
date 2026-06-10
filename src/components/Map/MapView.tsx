@@ -38,23 +38,25 @@ export function MapView({ peaks, profiles, visits, currentUserId }: MapViewProps
       return peakVisits.length === 0 ? '#9CA3AF' : '#16A34A';
     }
     const matchingVisits = peakVisits.filter((v) => selectedUserIds.includes(v.user_id));
-    if (matchingVisits.length === 0) {
-      const anyoneVisited = peakVisits.length > 0;
-      if (selectedUserIds.length === profiles.length && !anyoneVisited) return '#EF4444';
-      return '#D1D5DB';
+    if (matchingVisits.length > 0) {
+      return profileColorMap.get(matchingVisits[0].user_id) ?? '#16A34A';
     }
-    // Color of the first matching user
-    return profileColorMap.get(matchingVisits[0].user_id) ?? '#16A34A';
+    // 1 user: gray (browsing their history); 2+ users: red (joint unvisited targets)
+    return selectedUserIds.length === 1 ? '#9CA3AF' : '#EF4444';
   }
 
   useEffect(() => {
-    if (!mapRef.current || leafletMap.current) return;
+    if (!mapRef.current) return;
+
+    let map: import('leaflet').Map | null = null;
 
     const initMap = async () => {
       const L = (await import('leaflet')).default;
       await import('leaflet/dist/leaflet.css');
 
-      const map = L.map(mapRef.current!, {
+      if (!mapRef.current) return;
+
+      map = L.map(mapRef.current, {
         center: [45.1, 16.0],
         zoom: 7,
         zoomControl: true,
@@ -77,7 +79,7 @@ export function MapView({ peaks, profiles, visits, currentUserId }: MapViewProps
           opacity: 1,
           fillOpacity: 0.9,
         })
-          .addTo(map)
+          .addTo(map!)
           .on('click', () => setSelectedPeak(peak));
 
         markersRef.current.set(peak.id, marker);
@@ -85,6 +87,12 @@ export function MapView({ peaks, profiles, visits, currentUserId }: MapViewProps
     };
 
     initMap();
+
+    return () => {
+      map?.remove();
+      leafletMap.current = null;
+      markersRef.current.clear();
+    };
   }, []);
 
   // Update marker colors when filters change

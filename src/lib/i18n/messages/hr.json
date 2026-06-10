@@ -2,6 +2,7 @@
   "nav": {
     "map": "Karta",
     "peaks": "Vrhovi",
+    "leaderboard": "Ljestvica",
     "profile": "Profil",
     "login": "Prijava",
     "logout": "Odjava"
@@ -35,6 +36,21 @@
   "visitForm": {
     "title": "Označi kao posjećen",
     "dateLabel": "Datum posjete",
+    "unknownDate": "Ne pamtim datum",
+    "companionsLabel": "S kim si bio/la? (nije obavezno)",
+    "companionsPlaceholder": "Marko, Ana, Petra...",
+    "startPointLabel": "Polazišna točka / ruta (nije obavezno)",
+    "startPointPlaceholder": "npr. Bijela Voda – Restoran",
+    "weatherLabel": "Vremenski uvjeti (nije obavezno)",
+    "weatherSunny": "Sunčano ☀️",
+    "weatherCloudy": "Oblačno ⛅",
+    "weatherFoggy": "Maglovito 🌫️",
+    "weatherRainy": "Kišovito 🌧️",
+    "weatherSnowy": "Snijeg ❄️",
+    "weatherSelect": "Odaberi uvjete...",
+    "durationLabel": "Trajanje pohoda (nije obavezno)",
+    "durationHours": "Sati",
+    "durationMinutes": "Minute",
     "noteLabel": "Bilješka (nije obavezno)",
     "notePlaceholder": "Kako je bilo? Posebni dojmovi...",
     "photosLabel": "Fotografije (nije obavezno)",
@@ -47,19 +63,18 @@
   },
   "login": {
     "title": "Prijava",
-    "subtitle": "Unesite e-mail adresu i dobit ćete link za prijavu.",
-    "emailLabel": "E-mail adresa",
-    "emailPlaceholder": "tvoj@email.com",
-    "submit": "Pošalji link za prijavu",
-    "submitting": "Slanje...",
-    "successTitle": "Provjeri e-mail!",
-    "successText": "Poslali smo ti link za prijavu na {email}. Klikni na link i bit ćeš prijavljen/a.",
-    "error": "Greška pri slanju. Provjeri e-mail i pokušaj ponovo."
+    "subtitle": "Prijavi se Google računom. Brzo, bez lozinke.",
+    "googleButton": "Prijavi se s Google računom",
+    "signingIn": "Prijava u tijeku...",
+    "error": "Greška pri prijavi. Pokušaj ponovo."
   },
   "profile": {
     "title": "Moj profil",
+    "emailLabel": "E-mail adresa",
     "displayName": "Ime za prikaz",
     "displayNamePlaceholder": "Kako te zovu?",
+    "hikingClub": "Planinarsko društvo (nije obavezno)",
+    "hikingClubPlaceholder": "npr. PD Željezničar",
     "save": "Spremi",
     "saving": "Spremanje...",
     "saved": "Spremljeno!",
@@ -69,11 +84,13 @@
     "of153": "od 153 HPO vrhova"
   },
   "leaderboard": {
-    "title": "Ljestvica",
+    "title": "Ljestvica planinara",
+    "subtitle": "Tko je obišao najviše HPO vrhova?",
     "rank": "#",
-    "name": "Ime",
+    "name": "Planinar",
     "peaks": "Vrhovi",
-    "percentage": "%"
+    "percentage": "%",
+    "empty": "Još nema posjeta. Budi prvi/a!"
   },
   "peaks": {
     "title": "Svi vrhovi",

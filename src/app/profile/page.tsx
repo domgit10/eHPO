@@ -18,6 +18,7 @@ export default async function ProfilePage() {
   return (
     <ProfileClient
       profile={profileRes.data}
+      userEmail={user.email ?? null}
       visits={(visitsRes.data ?? []) as Visit[]}
       peaks={(peaksRes.data ?? []) as Peak[]}
     />

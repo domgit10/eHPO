@@ -34,7 +34,7 @@ export function LanguageSwitcher() {
       >
         HR
       </button>
-      <span className="text-gray-300">|</span>
+      <span className="text-gray-400">|</span>
       <button
         onClick={() => switchLocale('en')}
         className={`px-2 py-1 rounded transition-colors ${

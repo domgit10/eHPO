@@ -1,8 +1,7 @@
 import type { Metadata } from 'next';
 import { Geist } from 'next/font/google';
 import { NextIntlClientProvider } from 'next-intl';
-import { getLocaleFromCookie } from '@/lib/i18n/locale';
-import { getMessages } from '@/lib/i18n';
+import { getLocale, getMessages } from 'next-intl/server';
 import { Navbar } from '@/components/Nav/Navbar';
 import './globals.css';
 
@@ -14,8 +13,8 @@ export const metadata: Metadata = {
 };
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
-  const locale = await getLocaleFromCookie();
-  const messages = await getMessages(locale);
+  const locale = await getLocale();
+  const messages = await getMessages();
 
   return (
     <html lang={locale} className={`h-full ${geist.className}`}>

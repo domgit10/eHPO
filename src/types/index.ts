@@ -18,6 +18,7 @@ export interface Profile {
   id: string;
   display_name: string;
   avatar_url: string | null;
+  hiking_club: string | null;
   created_at: string;
 }
 
@@ -25,8 +26,12 @@ export interface Visit {
   id: string;
   user_id: string;
   peak_id: string;
-  visited_at: string;
+  visited_at: string | null;
   note: string | null;
+  companions: string | null;
+  start_point: string | null;
+  weather: 'sunny' | 'cloudy' | 'foggy' | 'rainy' | 'snowy' | null;
+  duration_minutes: number | null;
   created_at: string;
 }
 
@@ -54,7 +59,7 @@ export interface PeakWithVisits extends Peak {
 export type Locale = 'hr' | 'en';
 
 export const USER_COLORS = [
-  '#E53E3E', // red
+  '#0D9488', // teal — red is reserved for map's "unvisited" state
   '#3182CE', // blue
   '#38A169', // green
   '#D69E2E', // yellow
