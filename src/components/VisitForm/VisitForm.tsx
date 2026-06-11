@@ -28,6 +28,7 @@ export function VisitForm({ peak, existingVisit, userId, onClose, onSuccess }: V
   const [durationMins, setDurationMins] = useState(
     existingVisit?.duration_minutes != null ? (existingVisit.duration_minutes % 60).toString() : ''
   );
+  const [stampCollected, setStampCollected] = useState(existingVisit?.stamp_collected ?? false);
   const [note, setNote] = useState(existingVisit?.note ?? '');
   const [files, setFiles] = useState<File[]>([]);
   const [loading, setLoading] = useState(false);
@@ -56,6 +57,7 @@ export function VisitForm({ peak, existingVisit, userId, onClose, onSuccess }: V
         start_point: startPoint || null,
         weather: (weather || null) as Visit['weather'],
         duration_minutes: getDurationMinutes(),
+        stamp_collected: stampCollected,
       };
 
       if (existingVisit) {
@@ -126,6 +128,20 @@ export function VisitForm({ peak, existingVisit, userId, onClose, onSuccess }: V
             />
           )}
         </div>
+
+        {/* Stamp */}
+        <label className="flex items-center gap-2.5 cursor-pointer">
+          <input
+            type="checkbox"
+            checked={stampCollected}
+            onChange={(e) => setStampCollected(e.target.checked)}
+            className="w-4 h-4 accent-green-600"
+          />
+          <span className="text-sm text-gray-700">
+            🏷 {t('stampLabel')}
+          </span>
+          <span className="text-xs text-gray-500">{t('stampHint')}</span>
+        </label>
 
         {/* Companions */}
         <div>

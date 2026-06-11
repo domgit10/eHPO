@@ -32,6 +32,7 @@ export interface Visit {
   start_point: string | null;
   weather: 'sunny' | 'cloudy' | 'foggy' | 'rainy' | 'snowy' | null;
   duration_minutes: number | null;
+  stamp_collected: boolean | null;
   created_at: string;
 }
 
@@ -64,7 +65,7 @@ export const USER_COLORS = [
   '#38A169', // green
   '#D69E2E', // yellow
   '#805AD5', // purple
-  '#DD6B20', // orange
+  '#7C3AED', // violet — orange is reserved for map's "visited without stamp" state
   '#00B5D8', // cyan
   '#D53F8C', // pink
 ] as const;

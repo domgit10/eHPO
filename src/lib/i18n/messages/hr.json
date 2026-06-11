@@ -53,6 +53,8 @@
     "durationMinutes": "Minute",
     "noteLabel": "Bilješka (nije obavezno)",
     "notePlaceholder": "Kako je bilo? Posebni dojmovi...",
+    "stampLabel": "Pečat sakupljen",
+    "stampHint": "Imam pečat u knjizi",
     "photosLabel": "Fotografije (nije obavezno)",
     "photosHint": "Dodaj do 5 fotografija s vrha",
     "submit": "Spremi posjet",

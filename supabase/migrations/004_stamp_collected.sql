@@ -1,0 +1,1 @@
+ALTER TABLE visits ADD COLUMN stamp_collected BOOLEAN DEFAULT NULL;

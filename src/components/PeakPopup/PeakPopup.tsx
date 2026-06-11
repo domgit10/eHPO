@@ -49,7 +49,7 @@ export function PeakPopup({
   }
 
   return (
-    <div className="absolute right-0 top-0 h-full w-80 bg-white shadow-xl border-l border-gray-200 flex flex-col z-10 overflow-hidden">
+    <div className="absolute right-0 top-0 h-full w-full sm:w-80 bg-white shadow-xl border-l border-gray-200 flex flex-col z-10 overflow-hidden">
       {/* Header */}
       <div className="p-4 border-b border-gray-100 flex items-start justify-between">
         <div>
@@ -95,7 +95,8 @@ export function PeakPopup({
                     <span className="font-medium text-sm text-gray-800">
                       {profile?.display_name ?? tCommon('unknown')}
                     </span>
-                    <span className="text-xs text-gray-600 ml-auto">
+                    <span className="text-xs text-gray-600 ml-auto flex items-center gap-1">
+                      {visit.stamp_collected && <span title="Pečat sakupljen">🏷</span>}
                       {visit.visited_at ? new Date(visit.visited_at).toLocaleDateString('hr-HR') : '—'}
                     </span>
                   </div>

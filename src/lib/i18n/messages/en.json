@@ -53,6 +53,8 @@
     "durationMinutes": "Minutes",
     "noteLabel": "Note (optional)",
     "notePlaceholder": "How was it? Any special memories...",
+    "stampLabel": "Stamp collected",
+    "stampHint": "I have the stamp in my book",
     "photosLabel": "Photos (optional)",
     "photosHint": "Add up to 5 photos from the summit",
     "submit": "Save visit",

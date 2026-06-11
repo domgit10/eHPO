@@ -21,7 +21,7 @@ export function FilterSidebar({
   profileColorMap,
 }: FilterSidebarProps) {
   const t = useTranslations('map');
-  const [collapsed, setCollapsed] = useState(false);
+  const [collapsed, setCollapsed] = useState(true);
 
   const visitCountByUser = new Map<string, number>();
   for (const v of visits) {
@@ -46,13 +46,13 @@ export function FilterSidebar({
 
   return (
     <div
-      className={`bg-white border-r border-gray-200 shadow-sm flex flex-col transition-all duration-200 ${
-        collapsed ? 'w-10' : 'w-60'
+      className={`bg-white border-r border-gray-200 shadow-lg sm:shadow-sm flex flex-col transition-all duration-200 absolute sm:relative left-0 top-0 bottom-0 z-20 ${
+        collapsed ? 'w-10' : 'w-64 sm:w-60'
       }`}
     >
       <button
         onClick={() => setCollapsed(!collapsed)}
-        className="p-2.5 text-gray-500 hover:text-gray-700 self-end text-xs"
+        className="p-3 sm:p-2.5 text-gray-500 hover:text-gray-700 self-end text-sm sm:text-xs"
         title={collapsed ? 'Otvori filtar' : 'Zatvori filtar'}
       >
         {collapsed ? '▶' : '◀'}
@@ -108,13 +108,16 @@ export function FilterSidebar({
             })}
           </div>
 
-          {selectedUserIds.length > 0 && (
-            <div className="mt-4 pt-3 border-t border-gray-100">
+          <div className="mt-4 pt-3 border-t border-gray-100 space-y-1">
+            <p className="text-xs text-gray-500">
+              🟠 Narančaste = posjećeno bez pečata
+            </p>
+            {selectedUserIds.length > 1 && (
               <p className="text-xs text-gray-500">
-                Crvene oznake = nitko od označenih nije posjetio
+                🔴 Crvene = nitko od označenih nije posjetio
               </p>
-            </div>
-          )}
+            )}
+          </div>
         </div>
       )}
     </div>

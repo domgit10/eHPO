@@ -19,6 +19,7 @@ export function MapView({ peaks, profiles, visits, currentUserId }: MapViewProps
   const markersRef = useRef<Map<string, import('leaflet').CircleMarker>>(new Map());
   const [selectedPeak, setSelectedPeak] = useState<Peak | null>(null);
   const [selectedUserIds, setSelectedUserIds] = useState<string[]>([]);
+  const [mapReady, setMapReady] = useState(false);
 
   // Build visit lookup: peakId -> [VisitWithPhotos]
   const visitsByPeak = new Map<string, VisitWithPhotos[]>();
@@ -32,17 +33,24 @@ export function MapView({ peaks, profiles, visits, currentUserId }: MapViewProps
   const profileColorMap = new Map<string, string>();
   profiles.forEach((p, i) => profileColorMap.set(p.id, USER_COLORS[i % USER_COLORS.length]));
 
+  const ORANGE_NO_STAMP = '#F97316';
+
   function getMarkerColor(peakId: string): string {
     const peakVisits = visitsByPeak.get(peakId) ?? [];
+
     if (selectedUserIds.length === 0) {
-      return peakVisits.length === 0 ? '#9CA3AF' : '#16A34A';
+      if (peakVisits.length === 0) return '#9CA3AF';
+      return peakVisits.some((v) => v.stamp_collected) ? '#16A34A' : ORANGE_NO_STAMP;
     }
+
     const matchingVisits = peakVisits.filter((v) => selectedUserIds.includes(v.user_id));
-    if (matchingVisits.length > 0) {
-      return profileColorMap.get(matchingVisits[0].user_id) ?? '#16A34A';
+    if (matchingVisits.length === 0) {
+      return selectedUserIds.length === 1 ? '#9CA3AF' : '#EF4444';
     }
-    // 1 user: gray (browsing their history); 2+ users: red (joint unvisited targets)
-    return selectedUserIds.length === 1 ? '#9CA3AF' : '#EF4444';
+
+    const withStamp = matchingVisits.find((v) => v.stamp_collected);
+    if (withStamp) return profileColorMap.get(withStamp.user_id) ?? '#16A34A';
+    return ORANGE_NO_STAMP;
   }
 
   useEffect(() => {
@@ -60,6 +68,7 @@ export function MapView({ peaks, profiles, visits, currentUserId }: MapViewProps
         center: [45.1, 16.0],
         zoom: 7,
         zoomControl: true,
+        preferCanvas: true,
       });
 
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -84,6 +93,8 @@ export function MapView({ peaks, profiles, visits, currentUserId }: MapViewProps
 
         markersRef.current.set(peak.id, marker);
       });
+
+      setMapReady(true);
     };
 
     initMap();
@@ -113,7 +124,13 @@ export function MapView({ peaks, profiles, visits, currentUserId }: MapViewProps
         profileColorMap={profileColorMap}
       />
 
-      <div ref={mapRef} className="flex-1 z-0" style={{ minHeight: '500px' }} />
+      <div ref={mapRef} className="flex-1 z-0 relative" style={{ minHeight: '500px' }}>
+        {!mapReady && (
+          <div className="absolute inset-0 flex items-center justify-center bg-gray-50 z-10">
+            <span className="text-sm text-gray-500">Učitavanje karte...</span>
+          </div>
+        )}
+      </div>
 
       {selectedPeak && (
         <PeakPopup

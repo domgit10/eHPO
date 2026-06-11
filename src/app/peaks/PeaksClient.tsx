@@ -113,7 +113,7 @@ export function PeaksClient({ peaks, visitorsByPeak, myVisitedIds }: PeaksClient
 
               <div className="flex items-center gap-4 flex-shrink-0">
                 {peak.difficulty && (
-                  <span className={`text-xs ${difficultyColors[peak.difficulty] ?? 'text-gray-600'}`}>
+                  <span className={`hidden sm:inline text-xs ${difficultyColors[peak.difficulty] ?? 'text-gray-600'}`}>
                     {difficultyLabels[peak.difficulty] ?? peak.difficulty}
                   </span>
                 )}
@@ -123,12 +123,12 @@ export function PeaksClient({ peaks, visitorsByPeak, myVisitedIds }: PeaksClient
                   </span>
                 )}
                 {visitors.length > 0 ? (
-                  <div className="text-xs text-gray-500 text-right w-20 truncate">
+                  <div className="hidden sm:block text-xs text-gray-500 text-right w-20 truncate">
                     {visitors.slice(0, 2).join(', ')}
                     {visitors.length > 2 && ` +${visitors.length - 2}`}
                   </div>
                 ) : (
-                  <span className="text-xs text-gray-500 w-20 text-right">—</span>
+                  <span className="hidden sm:block text-xs text-gray-500 w-20 text-right">—</span>
                 )}
               </div>
             </Link>
